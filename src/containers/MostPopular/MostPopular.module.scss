@@ -1,0 +1,88 @@
+@import "assets/scss/breakpoints.scss";
+
+
+.wrapper {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    color: initial;
+
+    @include table {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .image {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 5px;
+
+        @include table {
+            width: 100%;
+        }
+
+    }
+
+    .content {
+        width: 100%;
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            font-size: 15px;
+
+            span:nth-child(1) {
+                font-weight: bold
+            }
+
+            span:nth-child(2) {
+                font-weight: 200;
+                color: gray;
+            }
+        }
+
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+            line-height: normal;
+
+            @include table {
+                font-size: 25px;
+            }
+        }
+
+        .text {
+            color: gray;
+            font-weight: 400;
+            font-size: 20px;
+
+            @include table {
+                font-size: 15px;
+            }
+        }
+
+        .author {
+            display: flex;
+            gap: 10px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                span:nth-child(1) {
+                    font-weight: bold;
+                }
+
+                span:nth-child(2) {
+                    color: gray;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+
+}

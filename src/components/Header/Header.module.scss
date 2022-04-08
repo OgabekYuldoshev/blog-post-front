@@ -1,10 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import "assets/scss/breakpoints.scss";
 
 .wrapper {
     width: 100%;
     border-bottom: 1px solid lightgray;
     background-color: white;
     padding: 14px 0px;
+
+    @include table {
+        display: none;
+    }
+}
+
+.mobile {
+    display: none;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    background-color: white;
+    padding: 14px 0px;
+
+    @include table {
+        display: block;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 1366px;
+        min-height: calc(100% - 92px);
+        margin: auto;
+        padding: 0 34px;
+    }
+
 }
 
 .content {
@@ -34,4 +63,14 @@
     &Icon:hover {
         color: gray;
     }
+
+    &IconMenu {
+        font-size: 23px;
+        transition: .3s;
+    }
+
+    &IconMenu:hover {
+        color: gray;
+    }
+
 }

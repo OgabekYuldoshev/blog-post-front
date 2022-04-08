@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
 import reportWebVitals from "./reportWebVitals";
-import "antd/dist/antd.css";
+import "./index.scss";
 export const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback="">
       <QueryClientProvider client={queryClient}>
-          <App />
+        <App />
       </QueryClientProvider>
     </Suspense>
   </React.StrictMode>,
