@@ -1,4 +1,4 @@
-import classes from "./Card.module.scss";
+import classes from "./InlineCard.module.scss";
 import React from "react";
 import { Avatar } from "antd";
 import { Link } from "react-router-dom";
