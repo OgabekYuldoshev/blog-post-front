@@ -1,14 +1,16 @@
 import React from "react";
 import Layout from "layouts/Main";
-import Header from "components/Header";
 import MainSwiper from "containers/MainSwiper";
 import classes from "./Home.module.scss";
 import CardsContainer from "containers/CardsContainer";
 import MostPopular from "containers/MostPopular";
+import CategoryMain from "containers/CategoryMain";
+
+import { Row, Col } from "antd";
 
 const Home: React.FC = () => {
   return (
-    <Layout header={<Header />}>
+    <Layout>
       <h1 className={classes.title}>Trending</h1>
       <div className={classes.swiper}>
         <MainSwiper />
@@ -20,6 +22,14 @@ const Home: React.FC = () => {
         <h1 className={classes.title}>Most Popular</h1>
         <MostPopular />
       </div>
+      <Row gutter={[24, 24]} className={classes.popular}>
+        <Col md={12} sm={24}>
+          <CategoryMain />
+        </Col>
+        <Col md={12} sm={24}>
+          <CategoryMain />
+        </Col>
+      </Row>
     </Layout>
   );
 };

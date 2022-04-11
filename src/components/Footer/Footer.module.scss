@@ -1,0 +1,28 @@
+.container {
+    background-color: #373A3A;
+    padding: 3rem 20px;
+
+    &Wrapper {
+        width: 100%;
+        max-width: 1366px;
+        min-height: calc(100% - 92px);
+        margin: auto;
+    }
+
+    &Title {
+        color: whitesmoke;
+    }
+
+    &Content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer {
+        margin-top: 3rem;
+        color: whitesmoke;
+        text-align: center;
+    }
+}

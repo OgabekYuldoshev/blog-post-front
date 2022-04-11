@@ -1,3 +1,5 @@
+import Footer from "components/Footer";
+import Header from "components/Header";
 import React from "react";
 import classes from "./MainLayout.module.scss";
 
@@ -7,11 +9,11 @@ interface IProps {
   footer?: React.ReactNode;
 }
 
-const Main: React.FC<IProps> = ({ children, header, footer }) => (
+const Main: React.FC<IProps> = ({ children }) => (
   <main className={classes.layout}>
-    {header}
+    <Header />
     <section className={classes.wrapper}>{children}</section>
-    {footer}
+    <Footer />
   </main>
 );
 

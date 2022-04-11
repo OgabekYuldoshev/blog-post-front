@@ -1,6 +1,6 @@
 import React from "react";
-import { SwiperSlide, Swiper, SwiperProps } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y, SwiperOptions } from "swiper";
 
 // Import Swiper styles
 import "swiper/css/pagination";
@@ -8,16 +8,22 @@ import "swiper/css";
 interface IProps {
   swipes: React.ReactNode[];
   view?: number | "auto";
-  props?: SwiperProps;
+  breakpoints?: {
+    [width: number]: SwiperOptions;
+    [ratio: string]: SwiperOptions;
+  };
 }
-const SwiperCom: React.FC<IProps> = ({ swipes, view = 1, props }) => {
+const SwiperCom: React.FC<IProps> = ({ swipes, view = 1, breakpoints }) => {
   return (
     <Swiper
       // install Swiper modules
-      {...props}
+      breakpoints={breakpoints}
+      pagination={{
+        dynamicBullets: true,
+      }}
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       slidesPerView={view}
-      pagination={{ clickable: true }}
+      spaceBetween={30}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >

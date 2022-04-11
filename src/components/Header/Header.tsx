@@ -6,6 +6,7 @@ import { Row, Col, Affix } from "antd";
 import { useState } from "react";
 import SideMenu from "components/SideMenu";
 import { FaTelegram, FaInstagram, FaFacebook } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header: React.FC = () => {
   const [visible, setVisible] = useState(false);
@@ -18,7 +19,9 @@ const Header: React.FC = () => {
               <SearchInput />
             </Col>
             <Col className="gutter-row" span={12}>
-              <h1 className={classes.title}>{config.app.title}</h1>
+              <Link to={"/"}>
+                <h1 className={classes.title}>{config.app.title}</h1>
+              </Link>
             </Col>
             <Col className="gutter-row" md={6} sm={12}>
               <div className={classes.menu}>
